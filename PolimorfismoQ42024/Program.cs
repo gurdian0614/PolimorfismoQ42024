@@ -4,10 +4,6 @@ using PolimorfismoQ42024;
 string tipoInmueble, ubicacion;
 double areaTerreno, precio;
 
-Casa casa = new Casa();
-Departamento departamento = new Departamento();
-Terreno terreno = new Terreno();
-
 Console.WriteLine("Tipo de inmueble:");
 tipoInmueble = Console.ReadLine();
 
@@ -20,20 +16,17 @@ areaTerreno = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Precio:");
 precio = Convert.ToDouble(Console.ReadLine());
 
+Casa casa = new Casa();
 casa.TipoInmueble = tipoInmueble;
 casa.Ubicacion = ubicacion;
 casa.AreaTerreno = areaTerreno;
 casa.Precio = precio;
 
+Departamento departamento = new Departamento();
 departamento.TipoInmueble = tipoInmueble;
 departamento.Ubicacion = ubicacion;
 departamento.AreaTerreno = areaTerreno;
 departamento.Precio = precio;
-
-terreno.TipoInmueble = tipoInmueble;
-terreno.Ubicacion = ubicacion;
-terreno.AreaTerreno = areaTerreno;
-terreno.Precio = precio;
 
 Console.WriteLine();
 casa.Vender();
@@ -44,5 +37,6 @@ departamento.Vender(areaTerreno, precio);
 departamento.Vender(ubicacion, areaTerreno, precio);
 
 Console.WriteLine();
+Terreno terreno = new Terreno(tipoInmueble, ubicacion, areaTerreno, precio);
 terreno.Vender(tipoInmueble, ubicacion, areaTerreno, precio);
 terreno.Vender(ubicacion, areaTerreno, precio);
